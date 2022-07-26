@@ -6,8 +6,8 @@ const Header = (props) => {
   return (
     <React.Fragment>
       <header className={style.header}>
-        <h1>React Meals</h1>
-        <HeaderCartButton />
+        <h1>Redux Shopping Cart</h1>
+        <HeaderCartButton onClick={props.showCart} />
       </header>
       <div className={style['main-image']}>
         <img src={banner} alt="img" />

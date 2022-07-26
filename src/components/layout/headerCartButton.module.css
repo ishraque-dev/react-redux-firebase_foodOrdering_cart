@@ -40,7 +40,7 @@
 }
 
 .bump {
-  animation: bump 300ms ease-out;
+  animation: bump 300ms ease-in-out;
 }
 
 @keyframes bump {
@@ -58,5 +58,21 @@
   }
   100% {
     transform: scale(1);
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 667px) {
+  .button {
+    padding: 0 3px;
+  }
+  .button span {
+    font-size: 14px;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 812px) {
+  .button {
+    padding: 0 3px;
+  }
+  .button span {
+    font-size: 14px;
   }
 }

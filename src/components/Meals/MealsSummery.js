@@ -3,15 +3,21 @@ import style from './mealsSummery.module.css';
 const MealsSummery = () => {
   return (
     <section className={style.summary}>
-      <h2>Delicious Food, Delivered To You</h2>
-      <p>
-        Choose your favorite meal from our broad selection of available meals
-        and enjoy a delicious lunch or dinner at home.
-      </p>
-      <p>
-        All our meals are cooked with high-quality ingredients, just-in-time and
-        of course by experienced chefs!
-      </p>
+      <h2>This Project is Powered by </h2>
+      <h2>React-Redux & Firebase</h2>
+
+      <p>Highly optimized structured code and best practices</p>
+      {/* <small>
+        View source Code 👉
+        <a
+          href="https://github.com/ishraque-dev/react-redux-firebase_foodOrdering_cart"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Here👈
+        </a>
+        Don't forget to leave a star 🤗
+      </small> */}
     </section>
   );
 };
