@@ -55,6 +55,9 @@ const cartSlice = createSlice({
         totalAmount: updatedTotalAmount,
       };
     },
+    clearCart: () => {
+      return initialState;
+    },
   },
 });
 

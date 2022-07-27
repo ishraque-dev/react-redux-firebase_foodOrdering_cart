@@ -28,11 +28,17 @@
   /* transform: rotateZ(-5deg) translateY(-4rem) translateX(-1rem); */
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 667px) {
+  .header {
+    padding: 20px 0;
+  }
   .header h1 {
     font-size: 20px;
   }
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 812px) {
+  .header {
+    padding: 20px 0;
+  }
   .header h1 {
     font-size: 20px;
   }

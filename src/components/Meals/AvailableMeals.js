@@ -1,35 +1,35 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Card from '../UI/Card';
+import LoadingSpinner from '../UI/LoadingSpinner';
 import style from './availableMeals.module.css';
 import MealItem from './MealItem';
-const DUMMY_MEALS = [
-  {
-    id: 'm1',
-    name: 'Sushi',
-    description: 'Finest fish and veggies',
-    price: 22.99,
-  },
-  {
-    id: 'm2',
-    name: 'Schnitzel',
-    description: 'A german specialty!',
-    price: 16.5,
-  },
-  {
-    id: 'm3',
-    name: 'Barbecue Burger',
-    description: 'American, raw, meaty',
-    price: 12.99,
-  },
-  {
-    id: 'm4',
-    name: 'Green Bowl',
-    description: 'Healthy...and green...',
-    price: 18.99,
-  },
-];
+
 const AvailableMeals = () => {
-  const mealsList = DUMMY_MEALS.map((meal) => {
+  const [meals, setMeals] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  useEffect(() => {
+    const fetchMeals = async () => {
+      setIsLoading(true);
+      const response = await fetch(
+        'https://react-foods-28c4d-default-rtdb.firebaseio.com/meals.json'
+      );
+      const responseData = await response.json();
+
+      const data = [];
+      for (const key in responseData) {
+        data.push({
+          id: key,
+          name: responseData[key].name,
+          description: responseData[key].description,
+          price: responseData[key].price,
+        });
+      }
+      setMeals(data);
+      setIsLoading(false);
+    };
+    fetchMeals();
+  }, []);
+  const mealsList = meals.map((meal) => {
     return (
       <MealItem
         key={meal.id}
@@ -43,6 +43,7 @@ const AvailableMeals = () => {
   return (
     <section>
       <Card>
+        {isLoading && <LoadingSpinner />}
         <ul>{mealsList}</ul>
       </Card>
     </section>
