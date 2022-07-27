@@ -2,7 +2,6 @@ import style from './CheckOut.module.css';
 import { useRef, useState } from 'react';
 
 const isEmpty = (value) => value.trim() === '';
-const isFiveChars = (value) => value.trim().length === 5;
 
 const CheckOut = (props) => {
   const [formInputsValidity, setFormInputsValidity] = useState({
@@ -14,7 +13,7 @@ const CheckOut = (props) => {
 
   const nameInputRef = useRef();
   const streetInputRef = useRef();
-  const postalCodeInputRef = useRef();
+
   const cityInputRef = useRef();
 
   const confirmHandler = (event) => {

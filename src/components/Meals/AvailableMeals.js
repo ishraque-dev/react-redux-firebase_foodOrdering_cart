@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Card from '../UI/Card';
 import LoadingSpinner from '../UI/LoadingSpinner';
-import style from './availableMeals.module.css';
+
 import MealItem from './MealItem';
 
 const AvailableMeals = () => {

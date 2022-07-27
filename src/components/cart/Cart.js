@@ -23,9 +23,9 @@ const Cart = (props) => {
   const orderHandler = () => {
     setIsCheckOut(true);
   };
-  const time = new Date()
-    .toLocaleString('en-US', { timeZone: 'UTC' })
-    .toString();
+  // const time = new Date()
+  //   .toLocaleString('en-US', { timeZone: 'UTC' })
+  //   .toString();
   const submitHandler = async (userData) => {
     setIsSubmit(true);
     await fetch(
